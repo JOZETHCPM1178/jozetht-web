@@ -1,70 +1,54 @@
 
 body {
-    background-color: #1a1a1a;
-    color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #000; /* fondo oscuro para destacar el texto */
 }
 
 header {
-    padding: 20px;
     text-align: center;
-}
-
-.neon-text {
-    font-size: 2.5em;
-    text-shadow: 
-        0 0 5px #00ff00, 
-        0 0 10px #00ff00, 
-        0 0 20px #00ff00, 
-        0 0 40px #00cc00;
+    padding: 20px;
 }
 
 .social-links {
-    margin: 20px 0;
+    display: flex;
+    justify-content: center; /* Centra los iconos horizontalmente */
+    align-items: center; /* Centra los iconos verticalmente */
+    flex-wrap: wrap; /* Permite que los iconos se ajusten en filas si es necesario */
+    gap: 15px; /* Espaciado entre los iconos */
 }
 
 .social-links a {
-    margin: 0 15px;
-    transition: transform 0.3s;
+    display: inline-block;
 }
 
 .social-links img {
-    width: 50px; /* Tamaño de los iconos */
-    filter: brightness(1.5);
-    transition: transform 0.3s, filter 0.3s;
+    width: 40px; /* Ajusta el tamaño de los iconos */
+    height: 40px; /* Uniformiza el tamaño de los iconos */
 }
 
-.social-links a:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.8);
-}
-
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-.apps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-}
-
-footer {
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    background-color: #333;
-    position: relative;
-    bottom: 0;
+.neon-text {
+    color: #0f0; /* Ejemplo de color de texto */
+    text-shadow: 0 0 5px #00ff00; /* Efecto de neón */
 }
 
 .mortification-text {
-    color: #cccccc;
-    margin-top: 10px;
+    color: #fff; /* Color del texto de mortificación */
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222; /* Fondo del footer */
+    color: #fff; /* Color del texto del footer */
+}
+
+@media (max-width: 600px) {
+    /* Estilos adicionales para pantallas más pequeñas */
+    .social-links img {
+        width: 30px; /* Reduzco el tamaño de los iconos para móviles */
+        height: 30px;
+    }
 }
