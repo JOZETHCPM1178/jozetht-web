@@ -1,7 +1,7 @@
 const apkList = [
     { name: "Car Parking MOD", img: "https://github.com/JOZETHCPM1178/jozetht-web/raw/main/assets/carparking.png", url: "https://www.mediafire.com/file/et46cxcu69ehaok/cpm48213modt-Appsfab.net.apk/file" },
     { name: "Resident Evil 4 Wii", img: "https://github.com/JOZETHCPM1178/jozetht-web/raw/main/assets/resident.png", url: "https://www.mediafire.com/file/yimnvpsek5d1nl2/Resident_Evil_4_-_Wii_Edition_%2528USA%2529.nkit.7z/file" },
-    { name: "Drift Max Pro", img: "https://via.placeholder.com/300", url: "https://www.mediafire.com/file/89t5unkkc89ql0a/drift-max-pro-mod_2.5.89-an1.com.apk/file" }
+    { name: "Drift Max Pro", img: "https://github.com/JOZETHCPM1178/jozetht-web/raw/main/assets/icon.png", url: "https://www.mediafire.com/file/89t5unkkc89ql0a/drift-max-pro-mod_2.5.89-an1.com.apk/file" }
 ];
 
 function renderApks() {
