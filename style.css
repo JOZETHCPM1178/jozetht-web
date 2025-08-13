@@ -1,42 +1,70 @@
 
 body {
-    margin: 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
     font-family: Arial, sans-serif;
-    background: black;
-    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding: 20px;
     text-align: center;
 }
 
 .neon-text {
-    font-size: 2em;
-    text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 20px #0000ff, 0 0 40px #ff00ff;
+    font-size: 2.5em;
+    text-shadow: 
+        0 0 5px #00ff00, 
+        0 0 10px #00ff00, 
+        0 0 20px #00ff00, 
+        0 0 40px #00cc00;
 }
 
-.social-links img {
-    width: 40px;
-    margin: 0 10px;
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    margin: 0 15px;
     transition: transform 0.3s;
 }
 
-.social-links img:hover {
-    transform: scale(1.2);
+.social-links img {
+    width: 50px; /* Tamaño de los iconos */
+    filter: brightness(1.5);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.8);
+}
+
+main {
+    padding: 20px;
+    text-align: center;
 }
 
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
+}
+
+footer {
     padding: 20px;
-}
-
-.app-card {
-    background: rgba(255,255,255,0.1);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ff00ff;
-}
-
-.app-card img {
+    text-align: center;
     width: 100%;
-    border-radius: 10px;
+    background-color: #333;
+    position: relative;
+    bottom: 0;
+}
+
+.mortification-text {
+    color: #cccccc;
+    margin-top: 10px;
 }
