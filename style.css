@@ -1,54 +1,50 @@
-
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #000; /* fondo oscuro para destacar el texto */
+    box-sizing: border-box;
 }
 
+/* Estilo del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilo del encabezado */
 header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
+}
+
+/* Estilo de los enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de tarjetas */
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin: 20px;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center; /* Centra los iconos horizontalmente */
-    align-items: center; /* Centra los iconos verticalmente */
-    flex-wrap: wrap; /* Permite que los iconos se ajusten en filas si es necesario */
-    gap: 15px; /* Espaciado entre los iconos */
-}
-
-.social-links a {
-    display: inline-block;
-}
-
-.social-links img {
-    width: 40px; /* Ajusta el tamaño de los iconos */
-    height: 40px; /* Uniformiza el tamaño de los iconos */
-}
-
-.neon-text {
-    color: #0f0; /* Ejemplo de color de texto */
-    text-shadow: 0 0 5px #00ff00; /* Efecto de neón */
-}
-
-.mortification-text {
-    color: #fff; /* Color del texto de mortificación */
-    text-align: center;
-}
-
+/* Estilo de pies de página */
 footer {
+    background: #333;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    background-color: #222; /* Fondo del footer */
-    color: #fff; /* Color del texto del footer */
-}
-
-@media (max-width: 600px) {
-    /* Estilos adicionales para pantallas más pequeñas */
-    .social-links img {
-        width: 30px; /* Reduzco el tamaño de los iconos para móviles */
-        height: 30px;
-    }
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
