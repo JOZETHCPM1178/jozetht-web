@@ -3,14 +3,17 @@ body {
     background-color: black;
     color: #fff;
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
     text-align: center;
     text-shadow: 0 0 5px rgba(255, 0, 255, 0.8), 
                  0 0 10px rgba(0, 255, 255, 0.6),
                  0 0 15px rgba(0, 255, 0, 0.4);
     animation: rainbow 5s linear infinite;
+    margin: 20px;
 }
 
 @keyframes rainbow {
@@ -24,12 +27,51 @@ h1, h2, h3, h4, h5, h6 {
     100% { color: #ff0000; }
 }
 
-a {
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    margin: 0 15px;
     color: #ff00ff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
-a:hover {
+.social-links a:hover {
     text-shadow: 0 0 20px rgba(255, 0, 255, 1);
+}
+
+#watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.1;
+    font-size: 50px;
+    color: white;
+}
+
+#apps-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.app-card {
+    background: rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .app-card {
+        width: 90%; /* Full width on small screens */
+    }
 }
