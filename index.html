@@ -5,25 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargas</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { display: flex; flex-wrap: wrap; }
-        .item { margin: 10px; text-align: center; }
-        img { width: 100px; height: auto; }
-        a { text-decoration: none; color: blue; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .item {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+            animation: neonGlow 1.5s infinite alternate;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+            display: block;
+            margin-top: 5px;
+        }
+        /* Efecto neon */
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5), 0 0 15px rgba(0, 255, 0, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 1), 0 0 40px rgba(0, 255, 0, 1); }
+        }
+        .border-neon {
+            border: 5px solid rgba(0, 255, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            animation: neonGlow 1.5s infinite alternate;
+        }
     </style>
 </head>
 <body>
     <h1>Descargas Recomendadas</h1>
     <div class="container">
-        <div class="item">
+        <div class="item border-neon">
             <img src="https://github.com/JOZETHCPM1178/jozetht-web/raw/main/assets/cpm.png" alt="Car Parking MOD">
             <a href="https://www.mediafire.com/file/et46cxcu69ehaok/cpm48213modt-Appsfab.net.apk/file">Car Parking MOD</a>
         </div>
-        <div class="item">
+        <div class="item border-neon">
             <img src="https://github.com/JOZETHCPM1178/jozetht-web/raw/main/assets/resident.png" alt="Resident Evil 4 Wii emulador">
             <a href="https://www.mediafire.com/file/yimnvpsek5d1nl2/Resident_Evil_4_-_Wii_Edition_%2528USA%2529.nkit.7z/file">Resident Evil 4 Wii emulador</a>
         </div>
-        <div class="item">
+        <div class="item border-neon">
             <img src="https://github.com/JOZETHCPM1178/jozetht-web/raw/main/assets/icon.png" alt="Drift Max Pro MOD">
             <a href="https://www.mediafire.com/file/89t5unkkc89ql0a/drift-max-pro-mod_2.5.89-an1.com.apk/file">Drift Max Pro MOD</a>
         </div>
