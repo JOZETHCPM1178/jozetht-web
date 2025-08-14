@@ -1,0 +1,80 @@
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background: linear-gradient(90deg, red, blue, fuchsia, green, red);
+    background-size: 600% 600%;
+    animation: rainbow 10s ease infinite;
+}
+
+@keyframes rainbow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.social-links img {
+    width: 40px;
+    margin: 0 10px;
+    filter: drop-shadow(0px 0px 5px white);
+}
+
+#apk-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.apk-card {
+    background: #111;
+    border-radius: 15px;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, red, blue, fuchsia, green, red) 1;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.3);
+    animation: borderRainbow 5s infinite linear;
+}
+
+.apk-card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, red, blue, fuchsia, green, red);
+    background-size: 600% 600%;
+    animation: rainbow 10s ease infinite;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.watermark {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    font-size: 14px;
+    opacity: 0.7;
+    color: white;
+}
+
+@keyframes borderRainbow {
+    0% { border-image-source: linear-gradient(45deg, red, blue, fuchsia, green, red); }
+    50% { border-image-source: linear-gradient(45deg, green, fuchsia, blue, red, green); }
+    100% { border-image-source: linear-gradient(45deg, red, blue, fuchsia, green, red); }
+}
