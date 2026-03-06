@@ -4,34 +4,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOZETHCPM1 - APK Hub</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- CDN para Font Awesome -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: white;
+        }
+        .header {
+            background: #7c3aed;
+            padding: 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+        }
+        .nav {
+            background: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            background: #333;
+            border-radius: 30px;
+        }
+        .nav a.active {
+            background: #7c3aed;
+        }
+        .search {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .search input {
+            width: 100%;
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 2px solid #7c3aed;
+            border-radius: 50px;
+            color: white;
+        }
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: #1a1a1a;
+            border: none;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .filter-btn.active {
+            background: #7c3aed;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #333;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card h3 {
+            margin-bottom: 1rem;
+        }
+        .card a {
+            display: block;
+            background: #7c3aed;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .social {
+            text-align: center;
+            padding: 3rem;
+            background: #1a1a1a;
+            margin-top: 2rem;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .social-buttons a {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+        }
+        .telegram { background: #0088cc; }
+        .discord { background: #5865f2; }
+        .tiktok { background: #000; }
+        .youtube { background: #ff0000; }
+        .email { background: #7c3aed; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1>JOZETHCPM1 - APK Hub</h1>
-</header>
+    <div class="header">
+        <h1>JOZETHCPM1</h1>
+        <p>APK HUB</p>
+    </div>
 
-<main>
-    <section id="apk-list" class="grid"></section>
+    <div class="nav">
+        <a href="#" class="active" onclick="showHome()">Inicio</a>
+        <a href="#" onclick="showPrivacy()">Privacidad</a>
+        <a href="#" onclick="showContact()">Contacto</a>
+    </div>
 
-    <section id="social-media">
-        <h2>Sígueme en mis redes sociales</h2>
-        <ul>
-            <li>
-                <a href="https://tiktok.com/@jozethcpm0" target="_blank">
-                    <i class="fab fa-tiktok"></i> TikTok
-                </a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/@JOZETHCPM1" target="_blank">
-                    <i class="fab fa-youtube"></i> YouTube
-                </a>
-            </li>
-        </ul>
-    </section>
-</main>
+    <div id="content">
+        <!-- Aquí se carga el contenido -->
+    </div>
 
-<script src="assets/js/app.js"></script>
+    <div class="social">
+        <h3>📱 Redes Sociales</h3>
+        <div class="social-buttons">
+            <a href="https://t.me/Jozethcpm0" class="telegram">Telegram</a>
+            <a href="https://discord.gg/daJQPFmUF" class="discord">Discord</a>
+            <a href="https://www.tiktok.com/@.asmodeotk" class="tiktok">TikTok</a>
+            <a href="https://www.youtube.com/@JOZETHCPM1" class="youtube">YouTube</a>
+            <a href="mailto:asmodeotayson@gmail.com" class="email">Email</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 JOZETHCPM1 - 100% LEGÍTIMO</p>
+    </footer>
+
+    <script>
+        // ===== TUS APPS AQUÍ (solo editas esto) =====
+        const apps = [
+            {
+                nombre: "Car Parking Multiplayer MOD",
+                categoria: "juegos",
+                imagen: "<a href='https://postimg.cc/vcYWb9Fn' target='_blank'><img src='https://i.postimg.cc/vcYWb9Fn/1977870-2.jpg' border='0' alt='1977870-2'></a>",
+                url: "https://www.mediafire.com/file/et46cxcu69ehaok/cpm48213modt-Appsfab.net.apk/file"
+            },
+            {
+                nombre: "Resident Evil 4 Wii",
+                categoria: "juegos",
+                imagen: "https://via.placeholder.com/300x200/333/7c3aed?text=Resident+Evil+4",
+                url: "https://www.mediafire.com/file/yimnvpsek5d1nl2/Resident_Evil_4_-_Wii_Edition_%2528USA%2529.nkit.7z/file"
+            },
+            {
+                nombre: "MT Manager",
+                categoria: "apps",
+                imagen: "https://via.placeholder.com/300x200/333/7c3aed?text=MT+Manager",
+                url: "https://www.mediafire.com/file/qvtjqahtjc5dr7p/MT_Manager_2.15.7-clone.apk/file"
+            },
+            {
+                nombre: "Ishiruka Emulador",
+                categoria: "apps",
+                imagen: "https://via.placeholder.com/300x200/333/7c3aed?text=Ishiruka",
+                url: "https://www.mediafire.com/file/o4zfia09jjve16v/Ishiruka_Ishiruka_v16.apk/file"
+            }
+        ];
+
+        let filtro = 'todos';
+        let busqueda = '';
+
+        function showHome() {
+            let html = `
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="Buscar app..." onkeyup="buscarApps()">
+                </div>
+                <div class="filters">
+                    <button class="filter-btn ${filtro === 'todos' ? 'active' : ''}" onclick="filtrarApps('todos')">Todos</button>
+                    <button class="filter-btn ${filtro === 'juegos' ? 'active' : ''}" onclick="filtrarApps('juegos')">Juegos</button>
+                    <button class="filter-btn ${filtro === 'apps' ? 'active' : ''}" onclick="filtrarApps('apps')">Apps</button>
+                </div>
+                <div class="grid" id="appsGrid"></div>
+            `;
+            
+            document.getElementById('content').innerHTML = html;
+            mostrarApps();
+            
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            document.querySelectorAll('.nav a')[0].classList.add('active');
+        }
+
+        function mostrarApps() {
+            let appsFiltradas = apps;
+
+            if (filtro !== 'todos') {
+                appsFiltradas = appsFiltradas.filter(app => app.categoria === filtro);
+            }
+
+            if (busqueda) {
+                appsFiltradas = appsFiltradas.filter(app => 
+                    app.nombre.toLowerCase().includes(busqueda.toLowerCase())
+                );
+            }
+
+            let grid = document.getElementById('appsGrid');
+            if (!grid) return;
+
+            if (appsFiltradas.length === 0) {
+                grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem;">No hay apps</div>';
+                return;
+            }
+
+            grid.innerHTML = appsFiltradas.map(app => `
+                <div class="card">
+                    <img src="${app.imagen}" alt="${app.nombre}">
+                    <div class="card-content">
+                        <h3>${app.nombre}</h3>
+                        <a href="${app.url}" target="_blank">📥 Descargar</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filtrarApps(categoria) {
+            filtro = categoria;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            mostrarApps();
+        }
+
+        function buscarApps() {
+            busqueda = document.getElementById('searchInput').value;
+            mostrarApps();
+        }
+
+        function showPrivacy() {
+            document.getElementById('content').innerHTML = `
+                <div style="max-width:600px; margin:2rem auto; padding:2rem;">
+                    <h2 style="color:#7c3aed;">📋 Política de Privacidad</h2>
+                    <p style="margin-top:1rem; color:#999;">No recopilamos datos personales. Los enlaces son a sitios externos.</p>
+                </div>
+            `;
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            document.querySelectorAll('.nav a')[1].classList.add('active');
+        }
+
+        function showContact() {
+            document.getElementById('content').innerHTML = `
+                <div style="max-width:600px; margin:2rem auto; padding:2rem;">
+                    <h2 style="color:#7c3aed;">📬 Contacto</h2>
+                    <p style="margin-top:1rem;">📧 asmodeotayson@gmail.com</p>
+                    <p>📱 @Jozethcpm0 (Telegram)</p>
+                </div>
+            `;
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            document.querySelectorAll('.nav a')[2].classList.add('active');
+        }
+
+        // Iniciar
+        showHome();
+    </script>
 </body>
 </html>
