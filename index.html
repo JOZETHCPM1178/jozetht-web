@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModZone - APKs, Mods & Scripts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== CURSOR PERSONALIZADO ========== -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- ========== PARTÍCULAS DE FONDO ========== -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">Mod<span class="accent">Zone</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Inicio</a></li>
+      <li><a href="#apk" class="nav-link" data-section="apk">APKs</a></li>
+      <li><a href="#games" class="nav-link" data-section="games">Juegos Mod</a></li>
+      <li><a href="#scripts" class="nav-link" data-section="scripts">Scripts</a></li>
+      <li><a href="#tutorials" class="nav-link" data-section="tutorials">Tutoriales</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== HERO / HOME ========== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">🔥 La mejor colección de mods</div>
+    <h1 class="hero-title">
+      <span class="title-line">Bienvenido a</span>
+      <span class="title-main">Mod<span class="accent">Zone</span></span>
+    </h1>
+    <p class="hero-subtitle">
+      Descarga APKs modificadas, juegos mod, scripts exclusivos y aprende con nuestros videotutoriales. Todo gratis, todo actualizado.
+    </p>
+    <div class="hero-buttons">
+      <a href="#apk" class="btn btn-primary">
+        <span>📱 Ver APKs</span>
+      </a>
+      <a href="#games" class="btn btn-secondary">
+        <span>🎮 Juegos Mod</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number" data-target="120">0</span>
+        <span class="stat-label">APKs</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="85">0</span>
+        <span class="stat-label">Juegos</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="50">0</span>
+        <span class="stat-label">Scripts</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="30">0</span>
+        <span class="stat-label">Tutoriales</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="phone-mockup">
+      <div class="phone-screen">
+        <div class="phone-app-grid">
+          <div class="phone-app" style="--d:0.0s">📱</div>
+          <div class="phone-app" style="--d:0.1s">🎮</div>
+          <div class="phone-app" style="--d:0.2s">⚙️</div>
+          <div class="phone-app" style="--d:0.3s">🛡️</div>
+          <div class="phone-app" style="--d:0.4s">🔧</div>
+          <div class="phone-app" style="--d:0.5s">💎</div>
+        </div>
+      </div>
+    </div>
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+  </div>
+</section>
+
+<!-- ========== BARRA DE BÚSQUEDA GLOBAL ========== -->
+<section class="search-section">
+  <div class="search-container">
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        id="globalSearch"
+        class="search-input"
+        placeholder="Buscar APKs, juegos, scripts..."
+        autocomplete="off"
+      />
+      <button class="search-clear" id="searchClear" aria-label="Limpiar">✕</button>
+    </div>
+    <div class="category-pills">
+      <button class="pill active" data-filter="all">Todos</button>
+      <button class="pill" data-filter="apk">APK Apps</button>
+      <button class="pill" data-filter="game">Juegos Mod</button>
+      <button class="pill" data-filter="script">Scripts</button>
+      <button class="pill" data-filter="tutorial">Tutoriales</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECCIÓN APK ========== -->
+<section class="content-section" id="apk">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag">📱 Aplicaciones</div>
+      <h2 class="section-title">APK <span class="accent">Apps</span></h2>
+      <p class="section-desc">Las mejores aplicaciones modificadas, desbloqueadas y premium.</p>
+    </div>
+    <div class="cards-grid" id="apkGrid">
+      <!-- Las cards se generan con JavaScript -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECCIÓN JUEGOS MOD ========== -->
+<section class="content-section alt-bg" id="games">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag">🎮 Gaming</div>
+      <h2 class="section-title">Juegos <span class="accent">Mod</span></h2>
+      <p class="section-desc">Juegos con recursos infinitos, sin anuncios y desbloqueados.</p>
+    </div>
+    <div class="cards-grid" id="gamesGrid">
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECCIÓN SCRIPTS ========== -->
+<section class="content-section" id="scripts">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag">⚙️ Automatización</div>
+      <h2 class="section-title">Scripts <span class="accent">Exclusivos</span></h2>
+      <p class="section-desc">Scripts y herramientas para automatizar y mejorar tu experiencia.</p>
+    </div>
+    <div class="cards-grid" id="scriptsGrid">
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECCIÓN TUTORIALES ========== -->
+<section class="content-section alt-bg" id="tutorials">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag">🎬 Aprende</div>
+      <h2 class="section-title">Video <span class="accent">Tutoriales</span></h2>
+      <p class="section-desc">Aprende a instalar, usar y sacarle el máximo provecho a todo.</p>
+    </div>
+    <div class="cards-grid" id="tutorialsGrid">
+    </div>
+  </div>
+</section>
+
+<!-- ========== REDES SOCIALES ========== -->
+<section class="social-section" id="social">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag">🌐 Comunidad</div>
+      <h2 class="section-title">Síguenos en <span class="accent">Redes</span></h2>
+      <p class="section-desc">Únete a nuestra comunidad y no te pierdas ninguna actualización.</p>
+    </div>
+    <div class="social-grid">
+      <a href="https://www.tiktok.com/@chico_roblox2.0" target="_blank" class="social-card tiktok">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.77a8.27 8.27 0 004.84 1.56V6.9a4.84 4.84 0 01-1.07-.21z"/></svg>
+        </div>
+        <div class="social-info">
+          <span class="social-name">TikTok</span>
+          <span class="social-handle">@chico_roblox2.0</span>
+        </div>
+        <span class="social-arrow">→</span>
+      </a>
+      <a href="https://www.youtube.com/@JOZETHCPM1" target="_blank" class="social-card youtube">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div class="social-info">
+          <span class="social-name">YouTube</span>
+          <span class="social-handle">JOZETHCPM1</span>
+        </div>
+        <span class="social-arrow">→</span>
+      </a>
+      <a href="https://discord.gg/daJQPFmUF" target="_blank" class="social-card discord">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 00-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 00-5.487 0 12.36 12.36 0 00-.617-1.23A.077.077 0 008.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 00-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 00.031.055 20.03 20.03 0 005.993 2.98.078.078 0 00.084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 01-1.872-.878.075.075 0 01-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 01.078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 01.079.009c.12.098.245.195.372.288a.075.075 0 01-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 00-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 00.084.028 19.963 19.963 0 006.002-2.981.076.076 0 00.032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 00-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
+        </div>
+        <div class="social-info">
+          <span class="social-name">Discord</span>
+          <span class="social-handle">Unirse al servidor</span>
+        </div>
+        <span class="social-arrow">→</span>
+      </a>
+      <a href="https://t.me/+UCKFffJZwKs4NTkx" target="_blank" class="social-card telegram">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="social-info">
+          <span class="social-name">Telegram</span>
+          <span class="social-handle">Canal oficial</span>
+        </div>
+        <span class="social-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PANEL DE ADMINISTRACIÓN ========== -->
+<section class="admin-section" id="admin">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag">🛠️ Admin</div>
+      <h2 class="section-title">Panel de <span class="accent">Contenido</span></h2>
+      <p class="section-desc">Protegido con PIN. Solo tú puedes agregar o eliminar contenido.</p>
+    </div>
+    <div class="admin-panel">
+
+      <!-- ── OVERLAY DE PIN ── -->
+      <div id="adminPinOverlay" style="text-align:center;padding:20px 0 10px">
+        <div style="font-size:2.5rem;margin-bottom:12px">🔒</div>
+        <p style="color:var(--text-secondary);font-family:var(--font-display);font-size:0.8rem;letter-spacing:2px;margin-bottom:20px">INGRESA TU PIN DE ADMINISTRADOR</p>
+        <div style="display:flex;gap:10px;justify-content:center;max-width:280px;margin:0 auto 12px">
+          <input type="password" id="adminPinInput" class="form-input" placeholder="PIN" maxlength="10"
+            style="text-align:center;font-size:1.4rem;letter-spacing:6px;font-family:var(--font-display)" />
+          <button class="btn btn-primary" id="adminPinSubmit" style="white-space:nowrap">Entrar →</button>
+        </div>
+        <div id="adminPinError" style="color:var(--red);font-family:var(--font-display);font-size:0.75rem;letter-spacing:1px;min-height:20px"></div>
+        <p style="color:var(--text-muted);font-size:0.75rem;margin-top:14px">PIN por defecto: <code style="color:var(--accent)">1234</code> — Cámbialo en <code style="color:var(--accent)">app.js</code></p>
+      </div>
+
+      <!-- ── CONTENIDO DEL PANEL (visible tras PIN correcto) ── -->
+      <div id="adminContent" style="display:none">
+
+        <!-- Formulario de agregar -->
+        <div style="margin-bottom:32px">
+          <h3 style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:2px;color:var(--accent);margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:12px">➕ AGREGAR NUEVO CONTENIDO</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Nombre *</label>
+              <input type="text" id="adminName" class="form-input" placeholder="Ej: WhatsApp Mod" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Categoría *</label>
+              <select id="adminCategory" class="form-input">
+                <option value="apk">📱 APK App</option>
+                <option value="game">🎮 Juego Mod</option>
+                <option value="script">⚙️ Script</option>
+                <option value="tutorial">🎬 Tutorial</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Versión</label>
+              <input type="text" id="adminVersion" class="form-input" placeholder="Ej: v2.5.1" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Emoji / Icono</label>
+              <input type="text" id="adminEmoji" class="form-input" placeholder="Ej: 📱" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Descripción *</label>
+              <textarea id="adminDesc" class="form-input form-textarea" placeholder="Describe la app o contenido..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">🔗 Enlace Descarga (MediaFire, Mega, Drive…)</label>
+              <input type="url" id="adminDownload" class="form-input" placeholder="https://mediafire.com/..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label">🎯 Google Play / YouTube URL</label>
+              <input type="url" id="adminPlayStore" class="form-input" placeholder="https://play.google.com/..." />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Tags (separados por comas)</label>
+              <input type="text" id="adminTags" class="form-input" placeholder="Ej: premium, sin anuncios, offline" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" id="adminSubmit"><span>➕ Agregar Contenido</span></button>
+            <button class="btn btn-ghost"   id="adminClear"><span>🗑️ Limpiar</span></button>
+          </div>
+        </div>
+
+        <!-- Lista de contenido existente -->
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:2px;color:var(--accent);margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:12px">📋 CONTENIDO ACTUAL</h3>
+          <div id="adminCurrentList" style="display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto;padding-right:4px"></div>
+        </div>
+
+      </div><!-- /adminContent -->
+    </div><!-- /admin-panel -->
+  </div>
+</section>
+
+<!-- ========== MODAL DE DETALLE ========== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-body" id="modalBody">
+      <!-- Contenido dinámico -->
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">Mod<span class="accent">Zone</span></span>
+      <p class="footer-tagline">Tu fuente de APKs, mods y scripts.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.tiktok.com/@chico_roblox2.0" target="_blank" class="footer-social-btn tiktok" title="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.77a8.27 8.27 0 004.84 1.56V6.9a4.84 4.84 0 01-1.07-.21z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@JOZETHCPM1" target="_blank" class="footer-social-btn youtube" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://discord.gg/daJQPFmUF" target="_blank" class="footer-social-btn discord" title="Discord">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 00-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 00-5.487 0 12.36 12.36 0 00-.617-1.23A.077.077 0 008.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 00-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 00.031.055 20.03 20.03 0 005.993 2.98.078.078 0 00.084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 01-1.872-.878.075.075 0 01-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 01.078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 01.079.009c.12.098.245.195.372.288a.075.075 0 01-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 00-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 00.084.028 19.963 19.963 0 006.002-2.981.076.076 0 00.032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 00-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
+      </a>
+      <a href="https://t.me/+UCKFffJZwKs4NTkx" target="_blank" class="footer-social-btn telegram" title="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ModZone — Hecho con ❤️ por <strong>@chico_roblox2.0</strong></p>
+      <p class="footer-disclaimer">Este sitio no está afiliado con Google Play, MediaFire ni ninguna empresa mencionada.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== BOTÓN SCROLL TOP ========== -->
+<button class="scroll-top" id="scrollTop" aria-label="Subir arriba">↑</button>
+
+<script src="app.js"></script>
+</body>
+</html>
