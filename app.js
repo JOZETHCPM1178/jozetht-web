@@ -27,7 +27,7 @@ const FIREBASE_CONFIG = {
    Cambia este PIN para proteger el panel de admin.
    Solo quien sepa el PIN podrá agregar o eliminar contenido.
    ─────────────────────────────────────────────────────────────────────────── */
-const ADMIN_PIN = "0011";
+const ADMIN_PIN = "9999";
 
 /* ─── CONTENIDO INICIAL (se sube a Firestore solo la primera vez) ────────────
    Si tu Firestore ya tiene datos, este bloque se ignora automáticamente.
